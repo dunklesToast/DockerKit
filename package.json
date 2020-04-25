@@ -1,0 +1,13 @@
+{
+  "name": "dockerhomekit",
+  "version": "1.0.0",
+  "main": "src/Remote.js",
+  "author": "dunklesToast",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "dockerode": "^3.2.0",
+    "hap-nodejs": "^0.5.9",
+    "node-persist": "^0.0.11"
+  }
+}
