@@ -15,7 +15,7 @@
 `cd DockerKit`
 3. Install Dependencies
 `npm install` or `yarn`
-4. Fill the names.json with all the Container Names you want to control
+4. Fill the names.json with all the Container Names you want to control or leave it as an empty array `[]`. Then it'll load all containers.
 5. Start the Service
 `node src/Remote`
 

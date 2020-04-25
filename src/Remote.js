@@ -20,13 +20,30 @@ bridge.publish({
     category: Categories.BRIDGE
 });
 
-for (let i in names) {
-    if (!names.hasOwnProperty(i)) continue;
-    const dev = new SwitchAccessory(names[i]);
-    bridge.addBridgedAccessories({
-        accessory: dev.getAccessory()
-    });
-}
+(async function f() {
+    if(names.length !== 0){
+        for (let i in names) {
+            if (!names.hasOwnProperty(i)) continue;
+            const dev = new SwitchAccessory(names[i]);
+            console.log('Published ' + names[i]);
+            bridge.addBridgedAccessories({
+                accessory: dev.getAccessory()
+            });
+        }
+    }else {
+        console.log('No Container Name specified. Publishing all.');
+        const containerInfos = await docker.listContainers();
+        for(let i in containerInfos){
+            if(!containerInfos.hasOwnProperty(i)) continue;
+            const dev = new SwitchAccessory(containerInfos[i].Names[0]);
+            console.log('Publishing ' + containerInfos[i].Names[0]);
+            bridge.addBridgedAccessories({
+                accessory: dev.getAccessory()
+            });
+        }
+    }
+})();
+
 
 async function sendUpdates() {
     const containerInfos = await docker.listContainers({
