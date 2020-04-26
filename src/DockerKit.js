@@ -11,6 +11,7 @@ const Events = require('events').EventEmitter;
 const emitter = new Events();
 exports.emitter = emitter;
 const SwitchAccessory = require('./SwitchAccessory');
+var ListAllContainers = false
 
 // Creates the Bridge. $hostname can be used as a variable for the Device's hostname
 const name = config.bridge.deviceName.replace('$hostname', os.hostname()).replace(/\./, ' ');
@@ -28,7 +29,7 @@ bridge.publish({
 // TODO Re Publish Devices every x minutes
 
 async function publishServices(all) {
-    const containerInfos = await docker.listContainers();
+    const containerInfos = await docker.listContainers({all: config.bridge.listStoppedContainers});
     for (let i in containerInfos) {
         if (!containerInfos.hasOwnProperty(i)) continue;
         const containerName = containerInfos[i].Names[0].replace('/', '');
