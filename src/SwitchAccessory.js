@@ -1,21 +1,25 @@
 const {Accessory, Service, Characteristic, uuid, Categories} = require('hap-nodejs');
-const {emitter, docker} = require('./Remote');
+const {emitter, docker} = require('./DockerKit');
 
 module.exports = class SwitchAccessory {
-    constructor(name, id) {
+    constructor(name) {
+        console.log('Constructing ' + name);
         this.Switch = {
             name,
             model: 'Docker Container',
             category: Categories.SWITCH,
             container: docker.getContainer(name),
             setState: async function (state) {
-                try {
-                    if (state) await this.container.start();
-                    else await this.container.stop();
-                } catch (e) {
-                    console.log(e.message)
+                const currentState = await this.container.inspect();
+                const isRunning = currentState.State.Status === 'running';
+                if(isRunning !== state) {
+                    try {
+                        if (state) await this.container.start();
+                        else await this.container.stop();
+                    } catch (e) {
+                        console.log(e.message)
+                    }
                 }
-                console.log('Changing State from ' + name + ' to ' + state);
                 this.state = state;
             },
             state: false,
