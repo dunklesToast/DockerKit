@@ -9,9 +9,9 @@ storage.initSync();
 const {Bridge, uuid, Categories} = require('hap-nodejs');
 const Events = require('events').EventEmitter;
 const emitter = new Events();
+emitter.setMaxListeners(500);
 exports.emitter = emitter;
 const SwitchAccessory = require('./SwitchAccessory');
-var ListAllContainers = false
 
 // Creates the Bridge. $hostname can be used as a variable for the Device's hostname
 const name = config.bridge.deviceName.replace('$hostname', os.hostname()).replace(/\./, ' ');
@@ -29,7 +29,7 @@ bridge.publish({
 // TODO Re Publish Devices every x minutes
 
 async function publishServices(all) {
-    const containerInfos = await docker.listContainers({all: config.bridge.listStoppedContainers});
+    const containerInfos = await docker.listContainers({all: true});
     for (let i in containerInfos) {
         if (!containerInfos.hasOwnProperty(i)) continue;
         const containerName = containerInfos[i].Names[0].replace('/', '');

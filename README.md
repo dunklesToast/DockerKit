@@ -6,7 +6,7 @@
 - NodeJS & npm / yarn
 
 ### Configuration
-A very basic configuration is located in the config.json in the Repositories root-directory.
+A very basic configuration is located in the config.example.json in the Repositories root-directory.
 
 ```json
 {
@@ -33,6 +33,7 @@ A very basic configuration is located in the config.json in the Repositories roo
 `cd DockerKit`
 3. Install Dependencies
 `npm install` or `yarn`
+4. Move the `config.example.json` to `config.json`
 4. Start the Service
 `node src/DockerKit`
 
