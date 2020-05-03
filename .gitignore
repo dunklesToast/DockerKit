@@ -2,3 +2,6 @@ node_modules
 .idea
 persist
 config.json
+docker-compose.yml
+package-lock.json
+

@@ -11,6 +11,6 @@
     "node-persist": "^0.0.11"
   },
   "scripts": {
-    "dockerkit":"node src/DockerKit"
+    "dockerkit": "node src/DockerKit"
   }
 }
