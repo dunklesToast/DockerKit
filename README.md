@@ -40,11 +40,23 @@ A very basic configuration is located in the config.example.json in the Reposito
 Then go into the HomeKit App on your mobile Device (Mac does not work for pairing) and add a new Accessory.
 The default Setup Code is `123-45-678`
 
+
+### Docker
+
+* Mount your own config file over /app/config.json (`-v ./config.json:/app/config.json`)
+* The Docker container must be in host networking mode in order to added as an accessory
+* Docker socket must be volume mounted (`-v /var/run/docker.sock:/var/run/docker.sock`)
+
+Host networking **will not work** in Windows or OSX due to docker running in a VM on those platforms.
+
+An example docker-compose file is included.
+
+
 ### Todo:
 
 - ~~Fix 304 on first update~~
 - ~~Enable a mode where every container is controllable~~
-- Create and publish Docker Container for this module 
+- ~~Create~~ and publish Docker Container for this module 
 - Create a dimmable Light for Docker Swarm (idea by u/DuffMaaaann)
 - Basic Server statistics (idea by u/DuffMaaaann)
 - Fix issue with hostnames as Bridge Name
