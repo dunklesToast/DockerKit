@@ -1,0 +1,8 @@
+version: '3'
+services: 
+    dockerkit:
+        build: .
+        volumes: 
+            - ./config.json:/app/config.json
+            - /var/run/docker.sock:/var/run/docker.sock
+        network_mode: host
