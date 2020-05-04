@@ -2,5 +2,5 @@ node_modules
 .idea
 persist
 config.json
-package-lock.json
+
 

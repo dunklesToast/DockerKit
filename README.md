@@ -45,7 +45,7 @@ The default Setup Code is `123-45-678`
 
 * Mount your own config file over /app/config.json (`-v ./config.json:/app/config.json`)
 * The Docker container must be in host networking mode in order to added as an accessory
-* Docker socket must be volume mounted (`-v /var/run/docker.sock:/var/run/docker.sock`)
+* The Docker socket needs to be exposed via TCP socket or volume mounted (`-v /var/run/docker.sock:/var/run/docker.sock`).
 
 Host networking **will not work** in Windows or OSX due to docker running in a VM on those platforms.
 
