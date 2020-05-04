@@ -3,7 +3,7 @@ FROM    node:alpine
 RUN     mkdir /app
 WORKDIR /app
 
-ADD     ./src .
+ADD     src ./src
 ADD     package.json .
 ADD     yarn.lock .
 RUN     yarn install 
