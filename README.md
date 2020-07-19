@@ -5,6 +5,9 @@
 
 - NodeJS & npm / yarn
 
+### Use with Docker
+You can now pull this image from [Docker Hub](https://hub.docker.com/r/dunklestoast/dockerkit) and run it via Docker. Make sure to set `net=host`. Otherwise the devices won't be announced correctly.
+
 ### Configuration
 A very basic configuration is located in the config.example.json in the Repositories root-directory.
 

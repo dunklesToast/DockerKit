@@ -1,6 +1,6 @@
 {
   "name": "dockerhomekit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/Remote.js",
   "author": "dunklesToast",
   "license": "MIT",

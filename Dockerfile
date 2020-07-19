@@ -1,13 +1,13 @@
-FROM    node:alpine
+FROM node:14-alpine
 
-RUN     mkdir /app
-WORKDIR /app
+WORKDIR /usr/app
 
-ADD     src ./src
-ADD     package.json .
-ADD     yarn.lock .
-RUN     yarn install 
+RUN apk --no-cache add dbus nodejs avahi avahi-compat-libdns_sd avahi-dev
 
-VOLUME [ "/app/config.json", "/var/run/docker.sock" ]
+COPY . .
 
-CMD     sh -c "yarn run dockerkit"
+RUN yarn
+
+VOLUME [ "/usr/app/config.json", "/var/run/docker.sock" ]
+
+ENTRYPOINT ["node", "src/DockerKit.js"]
