@@ -8,5 +8,6 @@
     "mac": "FF:FF:FF:FF:FF:FF",
     "port": 50045,
     "pincode": "123-45-678"
-  }
+  },
+  "updateInterval": 5
 }
