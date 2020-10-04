@@ -7,7 +7,7 @@
   "private": false,
   "dependencies": {
     "@types/lodash.get": "^4.4.6",
-    "dockerode": "^3.2.0",
+    "dockerode": "^3.2.1",
     "hap-nodejs": "^0.8.2",
     "lodash.get": "^4.4.2",
     "node-persist": "^0.0.11"
