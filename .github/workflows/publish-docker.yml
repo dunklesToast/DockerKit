@@ -12,14 +12,28 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v1
-      - name: Login to DockerHub Registry
-        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u dunklesToast --password-stdin
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: dunklesToast
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Login to GitHub CR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.H5_GITHUB_TOKEN }}
       - name: Get the version
         id: vars
-        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
-      - name: Build the tagged Docker image
-        run: docker build . --file Dockerfile --tag dunklestoast/dockerkit:${{steps.vars.outputs.tag}} --tag dunklestoast/dockerkit:latest
-      - name: Push the tagged Docker image
-        run: docker push dunklestoast/dockerkit:${{steps.vars.outputs.tag}}
-      - name: Push the latest Docker image
-        run: docker push dunklestoast/dockerkit:latest
+        run: echo ::set-output name=tag::$(git describe --abbrev=0)
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: |
+            dunklestoast/DockerKit:latest
+            dunklestoast/DockerKit:${{steps.vars.outputs.tag}}
+            ghcr.io/dunklestoast/DockerKit:latest
+            ghcr.io/dunklestoast/DockerKit:${{steps.vars.outputs.tag}}
