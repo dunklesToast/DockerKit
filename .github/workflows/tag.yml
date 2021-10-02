@@ -1,0 +1,27 @@
+name: Create Release
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  release:
+    timeout-minutes: 5
+    name: Tagging & Release
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, 'chore(release): ')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.H5_GITHUB_TOKEN }}
+          fetch-depth: 0
+      - name: Configuring Git
+        run: |
+          git config --global user.name "high5-bot"
+          git config --global user.email "me+high5@dunklestoast.de"
+      - name: Install Dependencies
+        run: yarn
+      - name: Create Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.H5_GITHUB_TOKEN }}
