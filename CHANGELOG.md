@@ -1,3 +1,5 @@
+## [1.1.5](https://github.com/dunklesToast/DockerKit/compare/1.1.4...1.1.5) (2021-10-02)
+
 ## [1.1.4](https://github.com/dunklesToast/DockerKit/compare/1.1.3...1.1.4) (2021-10-02)
 
 ## [1.1.3](https://github.com/dunklesToast/DockerKit/compare/1.1.2...1.1.3) (2021-10-02)
