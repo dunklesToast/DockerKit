@@ -27,7 +27,7 @@ export default class Switch {
                         this.State = state;
                     } catch (e) {
                         console.error(`Unable to set new state for "${name}"`);
-                        console.error(e.message);
+                        console.error(e);
                     }
                 }
             },
