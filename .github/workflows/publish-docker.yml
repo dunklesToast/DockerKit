@@ -22,7 +22,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.H5_GITHUB_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get the version
         id: vars
         run: echo ::set-output name=tag::$(git describe --abbrev=0)
