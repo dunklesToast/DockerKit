@@ -33,7 +33,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            dunklestoast/DockerKit:latest
-            dunklestoast/DockerKit:${{steps.vars.outputs.tag}}
-            ghcr.io/dunklestoast/DockerKit:latest
-            ghcr.io/dunklestoast/DockerKit:${{steps.vars.outputs.tag}}
+            dunklestoast/dockerkit:latest
+            dunklestoast/dockerkit:${{steps.vars.outputs.tag}}
+            ghcr.io/dunklestoast/dockerkit:latest
+            ghcr.io/dunklestoast/dockerkit:${{steps.vars.outputs.tag}}
