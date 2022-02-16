@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/dunklesToast/DockerKit/compare/1.1.5...1.1.6) (2022-02-16)
+
+
+### Bug Fixes
+
+* use correct path in docker compose ([#14](https://github.com/dunklesToast/DockerKit/issues/14)) ([0fcbe8d](https://github.com/dunklesToast/DockerKit/commit/0fcbe8d7673904993100b543c269790ce3a5e96b))
+
 ## [1.1.5](https://github.com/dunklesToast/DockerKit/compare/1.1.4...1.1.5) (2021-10-02)
 
 ## [1.1.4](https://github.com/dunklesToast/DockerKit/compare/1.1.3...1.1.4) (2021-10-02)
