@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dunklesToast/DockerKit/compare/1.1.6...2.0.0) (2022-10-01)
+
+
+### chore
+
+* upgrade dependencies ([#15](https://github.com/dunklesToast/DockerKit/issues/15)) ([37fd585](https://github.com/dunklesToast/DockerKit/commit/37fd585b13e7872cdfa327c1b11a6e40f5dac9e9))
+
+
+### BREAKING CHANGES
+
+* upgrades node version to 16 (was 14) for docker
+
 ## [1.1.6](https://github.com/dunklesToast/DockerKit/compare/1.1.5...1.1.6) (2022-02-16)
 
 
