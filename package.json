@@ -1,36 +1,37 @@
 {
   "name": "dockerhomekit",
   "version": "1.1.6",
-  "main": "src/Remote.js",
+  "main": "src/DockerKit.ts",
   "author": "dunklesToast",
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@types/lodash.get": "4.4.6",
-    "dockerode": "3.3.1",
+    "@types/lodash.get": "4.4.7",
+    "dockerode": "3.3.4",
     "hap-nodejs": "0.8.5",
     "lodash.get": "4.4.2",
     "node-persist": "0.0.11"
   },
   "scripts": {
     "dockerkit": "node src/DockerKit",
-    "release": "release-it"
+    "release": "release-it",
+    "build": "yarn tsc"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
-    "@types/dockerode": "3.2.7",
-    "@types/node": "16.10.2",
-    "@types/node-persist": "3.1.2",
+    "@types/dockerode": "3.3.11",
+    "@types/node": "18.7.23",
+    "@types/node-persist": "3.1.3",
     "@typescript-eslint/eslint-plugin": "4.32.0",
     "@typescript-eslint/parser": "4.32.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-prettier": "4.0.0",
-    "prettier": "2.4.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.7.1",
     "release-it": "^14.11.6",
-    "ts-node": "10.2.1",
-    "typescript": "4.4.3"
+    "ts-node": "10.9.1",
+    "typescript": "4.8.4"
   }
 }
