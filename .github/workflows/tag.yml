@@ -15,6 +15,9 @@ jobs:
         with:
           token: ${{ secrets.H5_GITHUB_TOKEN }}
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Configuring Git
         run: |
           git config --global user.name "high5-bot"

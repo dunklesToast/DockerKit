@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checking out
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Installing dependencies
         run: yarn install
       - name: Run TypeScript Compiler
