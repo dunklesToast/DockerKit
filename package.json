@@ -1,6 +1,6 @@
 {
   "name": "dockerhomekit",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "src/DockerKit.ts",
   "author": "dunklesToast",
   "license": "MIT",
