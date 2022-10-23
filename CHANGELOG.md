@@ -1,3 +1,5 @@
+## [2.0.1](https://github.com/dunklesToast/DockerKit/compare/2.0.0...2.0.1) (2022-10-23)
+
 # [2.0.0](https://github.com/dunklesToast/DockerKit/compare/1.1.6...2.0.0) (2022-10-01)
 
 
