@@ -3,3 +3,4 @@ node_modules
 persist
 config.json
 dist
+.DS_Store
